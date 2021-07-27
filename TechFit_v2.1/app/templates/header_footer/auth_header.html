@@ -1,0 +1,42 @@
+<header>
+
+    <!-- Header Title/Logo (With Clickable Url) -->
+    <a href="{{ url_for('authorized', page='authorized/auth_home', user=user) }}"> 
+        <div class=header-title-logo>
+            <h1>TechFit International</h1>
+            <p>Innovative fitness solutions</p>
+        </div>
+    </a>
+
+    <!-- Header Navigation Links -->
+    <nav class=header-nav>
+
+        <a href="{{ url_for('authorized', page='authorized/auth_home', user=user) }}">&nbsp;Home&nbsp;</a>
+        <a href="{{ url_for('authorized', page='authorized/auth_about', user=user) }}">&nbsp;About&nbsp;</a>
+        <a href="{{ url_for('authorized', page='authorized/auth_tech', user=user) }}">&nbsp;Tech&nbsp;</a>
+        <a href="{{ url_for('authorized', page='authorized/auth_products', user=user) }}">&nbsp;Products&nbsp;</a>
+
+        <a href="{{ url_for('authorized', page='authorized/auth_home', user=user) }}"> 
+            <div class=header-title-user>
+                <ul class=no-bullets>
+                    <li>
+                        <a class=user-header>
+                            &nbsp;
+                            <i class=user-header-img></i>
+                            <span>{{ user }}</span>
+                            &nbsp;
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('password', user=user) }}" class=user-header-setting>
+                            <span>change password</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </a>
+        <a href="{{ url_for('logout') }}">&nbsp;Logout&nbsp;</a>
+        
+    </nav>
+
+</header>

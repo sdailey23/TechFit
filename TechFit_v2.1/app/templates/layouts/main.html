@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+        <title>TechFit Intl</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body class=main>
+        <center>
+
+            <!-- Header -->
+            {% if auth_home == True %}
+                {% include 'header_footer/auth_header.html' %}
+            {% else %}
+                {% include 'header_footer/header.html' %}
+            {% endif %}
+
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="no-bullets">
+                        {% for message in messages %}
+                            {% if category == "error" %}
+                                <li class=error>{{ message }}</li>
+                            {% else %}
+                                <li class=message>{{ message }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+            <!-- Background Image -->
+            <div class=img_back>
+                <img src="/static/img/background/fitness_sillhouette.png"></img>
+            </div>
+
+            <!-- Page Content -->
+            {% block content %}{% endblock %}
+
+            <!-- Footer -->
+            {% include 'header_footer/footer.html' %}
+
+        </center>
+    </body>
+
+</html>

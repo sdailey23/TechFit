@@ -1,0 +1,40 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+    <div class=centered>
+        <section class=context>
+            <!-- Welcome Message -->
+            <h2>
+                Welcome!
+                {% if user != 'notreg' %}
+                    {{ user }}
+                {% endif %}
+            </h2>
+            <h4>TechFit is proud to announce an 
+                <span style="background-color:yellow">
+                    <!-- Highlighted Launch Date -->
+                    official launch day of: 13 July 2021
+                </span>
+            </h4>
+            <br>
+
+            <p>
+                As we approach our launch, we hope that you will be patient with us as we
+                continue to improve our site. Until then, please check out our content
+                and products catalog and be sure to sign up.
+            </p>
+            <br>
+
+            {% if user == 'notreg' %}
+                <!-- Sign Up Button (Future Feature) -->
+                <a href="{{ url_for('home') }}"> 
+                    <center >
+                        <div class=text_button>
+                                <h3>Sign Up Now</h3>
+                        </div>
+                    </center>
+                </a>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}

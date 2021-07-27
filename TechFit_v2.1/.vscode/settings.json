@@ -1,0 +1,12 @@
+{
+    "json.schemas": [
+
+        
+    ],
+
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.pythonPath": "env/bin/python",
+    "python.linting.pylintPath": "env/bin/pylint",
+    "python.linting.pylintUseMinimalCheckers": true
+}

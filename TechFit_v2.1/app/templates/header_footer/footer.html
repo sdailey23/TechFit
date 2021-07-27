@@ -1,0 +1,59 @@
+<footer>
+
+    <div>
+
+        <!-- Align Footer Nav Sections -->
+        <style>
+            .footer-nav-0, .footer-nav-1, .footer-nav-2 {
+                display: inline-block;
+                vertical-align:top;
+            }
+        </style>
+
+        <!-- Links Section-->
+        <div class=footer-nav-0>
+            <h4>Related Links</h4>
+            <nav class=nav-box>
+                <ul class=no-bullets>
+                    <li><a href="https://www.bodybuilding.com">Workouts & supplementes</a></li>
+                    <li><a href="https://www.powertec.com">Fitness Equipment</a></li>
+                    <li><a href="https://schoolofcalisthenics.com">Learn About Calistenics</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Support Section -->
+        <div class=footer-nav-1>
+            <h4>Support</h4>
+            <nav class=nav-box>
+                <ul class=no-bullets>
+                    <li><a href="{{ url_for('show', page='common/contact_us') }}">Contact Us</a></li>
+                    <li><a href="{{ url_for('show', page='common/coming_soon') }}">Write a Review</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        {% if user == 'unregistered' %}
+            <!-- Join Section (List of steps/No links) -->
+            <div class=footer-nav-2>
+                <h4>Join Us!</h4>
+                <nav class=nav-box>
+                    <ol>
+                        <li><a href="{{ url_for('signup') }}">Create an account</a></li>
+                        <li>Check out our content</li>
+                        <li>Find a product</li>
+                        <li>Enjoy!</li>
+                    </ol>
+                </nav>
+            </div>
+        {% endif %}
+
+        <!-- Time & Copyright -->
+        <p>
+            Time Accessed: {{ time }}<br>
+            © Shawn's Engineering Concepts 2021
+        </p>
+        
+    </div>
+
+</footer>

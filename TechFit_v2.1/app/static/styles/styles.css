@@ -1,0 +1,242 @@
+/* Main */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+  
+html, body {
+    height: 100%;
+}
+
+html {
+    background-color: black;
+}
+
+body {
+    background-color: white;
+}
+
+body.main {
+    overflow: auto;
+}
+
+/* Typography */
+
+h1 {
+    color: red;
+}
+
+.context {
+    width: 40%;
+    margin: 15px;
+    text-align: left;
+}
+
+ul, ol {
+    list-style-position:inside;
+}
+
+ul.no-bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.settings {
+    font-size: small;
+}
+
+/* Header and Footer */
+
+header, footer {
+    background-color: #d3d3d3;
+    padding: 15px;
+    position: relative;
+}
+
+.header-title-logo {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 2px solid black;
+}
+
+.header-title-logo, .header-title-user, .header-nav {
+    display: inline-block;
+    vertical-align: middle;
+}
+  
+footer {
+    align-content: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+/* Navigation & Links */
+
+A {
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    padding: 3px;
+}
+
+nav a:visited {
+    color: black;
+}
+
+nav a:hover {
+    color:white;
+    background-color:black;
+}
+
+nav.nav-box {
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header-nav {
+    font-size: large;
+    word-spacing: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline;
+}
+
+a.user-header {
+    color: white;
+    background-color: black;
+}
+
+a.user-header-setting {
+    font-size: small;
+}
+
+a.user-header-setting a:hover {
+    background-size: cover;
+}
+
+/* Forms */
+
+.form-wrapper {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.form-header {
+    margin: 5px;
+}
+
+.form-field {
+    text-align: left;
+    font-size: large;
+    border: hidden;
+    padding: 5px 10px;
+}
+
+.form-field label {
+    margin-right: 20px;
+}
+
+.form-field input {
+    float: right;
+    font-size: large;
+}
+
+input[type=submit], input[type=login] {
+    font-size: large;
+    color: white;
+    background: black; 
+    padding: 5px 50px; 
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: .4;
+}
+
+/* Images/Icons */
+
+.img_back {
+    top: -30;
+    opacity: 0.15;
+}
+
+ul.img_reel li {
+    list-style-type: none;
+    display: inline;
+}
+
+img.reel {
+    width: 90px;
+    height: 75px;
+    margin: 5px;
+    padding: 2px;
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+i.user-header-img {
+    background: url('/static/icons/user.svg') white;
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+}
+
+/* Utilities */
+
+div.centered {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+    height:auto;
+    background-color: transparent;
+}
+
+.text_button {
+    width:fit-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.error {
+    background-color: red;
+    color: white;
+    font-size: medium;
+    text-align: center;
+}
+
+.error-text {
+    color: red;
+}
+
+.message {
+    background-color: green;
+    color: white;
+    font-size: medium;
+    text-align: center;
+}

@@ -1,0 +1,61 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+    <div class="form-wrapper centered">
+        <h2 class=form-header>Login</h2>
+
+        <form method="POST" action="{{ url_for('login', attempts=attempts) }}">
+            {{ form.csrf_token }}
+
+            <!-- Disables for if too many login attempts -->
+            {% if attempts > 0 %}
+                <!-- Username Input -->
+                <fieldset class="form-field">
+                    {{ form.username.label }}
+                    {{ form.username }}
+                    
+
+                    <!-- Username Error Handling -->
+                    {% if form.username.errors %}
+                        <ul class="error-text no-bullets">
+                            {% for error in form.username.errors %}
+                                <br><li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </fieldset>
+
+                <!-- Password Input -->
+                <fieldset class="form-field">
+                    {{ form.password.label }}
+                    {{ form.password }}
+
+                    <!-- Password Error Handling -->
+                    {% if form.password.errors %}
+                        <ul class="error-text no-bullets">
+                            {% for error in form.password.errors %}
+                                <br><li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </fieldset>
+
+                </br>
+                <p>
+                    <!-- Test Data -->
+                    Test User: user2021</br> 
+                    Test Password: Password12345$
+                </p>
+                
+                <!-- Submit -->
+                <input type=submit value="Login"/>
+            {% else %}
+                </br>
+                <p class=error>
+                    &nbsp;LOGIN DISABLED&nbsp;<br>
+                    &nbsp;User has made too many login attempts&nbsp;
+                </p>
+            {% endif %}
+        </form>
+      </div>
+{% endblock %}

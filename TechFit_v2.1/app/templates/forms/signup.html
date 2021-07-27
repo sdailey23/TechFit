@@ -1,0 +1,44 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+    <div class="form-wrapper centered">
+        <h2 class=form-header>Sign Up</h2>
+
+        <form method="POST" action="{{ url_for('signup') }}">
+            {{ form.csrf_token }}
+
+            <!-- Username Input -->
+            <fieldset class="form-field">
+                {{ form.username.label }}
+                {{ form.username }}
+
+                <!-- Username Error Handling -->
+                {% if form.username.errors %}
+                    <ul class="error-text no-bullets">
+                        {% for error in form.username.errors %}
+                            <br><li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </fieldset>
+
+            <!-- Password Input -->
+            <fieldset class="form-field">
+                {{ form.password.label }}
+                {{ form.password }}
+
+                <!-- Password Error Handling -->
+                {% if form.password.errors %}
+                    <ul class="error-text no-bullets">
+                        {% for error in form.password.errors %}
+                            <br><li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </fieldset>
+            
+            <!-- Submit -->
+            <input type=submit value="Sign Up"/>
+        </form>
+    </div>
+{% endblock %}
